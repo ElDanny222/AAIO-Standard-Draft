@@ -1,0 +1,405 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tekoalydani.com/schemas/aaio-service/v0.1",
+  "title": "AAIO Service Schema",
+  "description": "Agent-optimal service data schema for Agentic AI Optimization (AAIO). Defines the canonical representation of a service offering that autonomous AI agents can reliably parse, compare, and use for procurement decisions.",
+  "type": "object",
+  "required": [
+    "aaio_schema",
+    "id",
+    "name",
+    "description",
+    "category",
+    "pricing",
+    "availability"
+  ],
+  "properties": {
+    "aaio_schema": {
+      "type": "string",
+      "const": "aaio-service/v0.1",
+      "description": "Schema identifier and version."
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "description": "Provider-unique stable service identifier. MUST NOT change across catalog updates."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Human and agent-readable service name. Plain text, no HTML."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000,
+      "description": "Plain-text service description. No HTML or markdown. Optimized for AI agent comprehension: lead with scope, deliverables, and value proposition."
+    },
+    "category": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "Hierarchical category path using forward-slash separators (e.g., 'consulting/ai-optimization')."
+        },
+        "custom_labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "maxItems": 20,
+          "description": "Custom classification labels for agent filtering."
+        }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Service provider name."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Provider website URL."
+        },
+        "vat_id": {
+          "type": "string",
+          "description": "Provider VAT identification number."
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Relevant certifications or accreditations."
+        }
+      },
+      "description": "Service provider information."
+    },
+    "pricing": {
+      "type": "object",
+      "required": ["model", "currency"],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": ["fixed", "hourly", "daily", "monthly", "annual", "usage_based", "tiered", "custom"],
+          "description": "Pricing model type."
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "description": "ISO 4217 currency code."
+        },
+        "amount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Base price in smallest currency unit (e.g., cents). Null if pricing is custom/contact-required."
+        },
+        "amount_decimal": {
+          "type": "string",
+          "pattern": "^[0-9]+(\\.[0-9]{1,4})?$",
+          "description": "Human-readable decimal price string (e.g., '2999.00')."
+        },
+        "tax_included": {
+          "type": "boolean",
+          "description": "Whether the amount includes applicable taxes."
+        },
+        "tax_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Applicable tax rate as decimal (e.g., 0.24 for 24% VAT)."
+        },
+        "billing_period": {
+          "type": "string",
+          "enum": ["one_time", "weekly", "monthly", "quarterly", "annual", null],
+          "description": "Billing frequency. Null for one-time or project-based services."
+        },
+        "minimum_commitment": {
+          "type": "object",
+          "properties": {
+            "duration_months": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Minimum contract duration in months."
+            },
+            "amount": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Minimum total commitment amount (smallest currency unit)."
+            }
+          },
+          "description": "Minimum contract/commitment terms."
+        },
+        "tiers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Tier name (e.g., 'basic', 'professional', 'enterprise')."
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Tier price (smallest currency unit). Null if contact-required."
+              },
+              "amount_decimal": {
+                "type": "string",
+                "description": "Human-readable decimal price."
+              },
+              "features": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Features included in this tier."
+              },
+              "limits": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Usage limits for this tier (e.g., {'api_calls_per_month': 10000})."
+              },
+              "contact_required": {
+                "type": "boolean",
+                "description": "Whether pricing requires direct contact."
+              }
+            }
+          },
+          "description": "Service pricing tiers."
+        },
+        "usage_unit": {
+          "type": "string",
+          "description": "Unit of measurement for usage-based pricing (e.g., 'api_call', 'gb', 'user', 'hour')."
+        },
+        "usage_rate": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Price per usage unit (smallest currency unit)."
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "required": ["model"],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": ["instant", "project", "ongoing", "subscription", "on_demand"],
+          "description": "Service delivery model."
+        },
+        "estimated_duration_days": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Estimated project duration in days. Applicable for 'project' delivery model."
+        },
+        "sla": {
+          "type": "object",
+          "properties": {
+            "uptime_percent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Guaranteed uptime percentage (for subscription/SaaS services)."
+            },
+            "response_time_hours": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Maximum response time in hours."
+            },
+            "resolution_time_hours": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Maximum resolution time in hours."
+            }
+          },
+          "description": "Service Level Agreement terms."
+        },
+        "regions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "description": "ISO 3166-1 alpha-2 country codes where the service is available."
+        },
+        "remote_available": {
+          "type": "boolean",
+          "description": "Whether the service can be delivered remotely."
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+          },
+          "description": "Supported languages (BCP 47 tags, e.g., 'fi', 'en-US')."
+        }
+      },
+      "description": "Service delivery information."
+    },
+    "availability": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["available", "limited", "waitlist", "unavailable", "discontinued"],
+          "description": "Current service availability."
+        },
+        "next_available_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Next available start date (ISO 8601 date)."
+        },
+        "capacity": {
+          "type": "object",
+          "properties": {
+            "current_slots": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of available slots/engagements."
+            },
+            "max_concurrent": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Maximum concurrent clients/engagements."
+            }
+          },
+          "description": "Capacity information."
+        },
+        "booking_url": {
+          "type": "string",
+          "description": "URL or endpoint path for booking/purchasing the service."
+        }
+      },
+      "description": "Service availability information."
+    },
+    "deliverables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Deliverable name."
+          },
+          "description": {
+            "type": "string",
+            "description": "Deliverable description."
+          },
+          "format": {
+            "type": "string",
+            "description": "Output format (e.g., 'pdf_report', 'implementation', 'api_access')."
+          },
+          "included_in_tiers": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Which pricing tiers include this deliverable."
+          }
+        }
+      },
+      "description": "Concrete deliverables the client receives."
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Prerequisites the client must meet before the service can begin."
+        },
+        "inputs_needed": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Information or access the client must provide."
+        },
+        "technical_requirements": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Technical requirements (e.g., platform, software versions)."
+        }
+      },
+      "description": "Client-side requirements for the service."
+    },
+    "agent_metadata": {
+      "type": "object",
+      "properties": {
+        "comparison_attributes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Attribute keys most useful for cross-service comparison."
+        },
+        "decision_factors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Dot-notation paths to fields most relevant for procurement decisions."
+        },
+        "qualification_questions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Questions an agent should ask the human principal before procuring this service."
+        },
+        "alternatives": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Service IDs of alternative offerings (same provider)."
+        },
+        "complementary": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Service IDs of complementary services."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Machine-readable tags for agent filtering and categorization."
+        }
+      },
+      "description": "Agent-optimization metadata. Helps autonomous agents evaluate and recommend the service without parsing all fields."
+    },
+    "acp_reference": {
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "type": "string",
+          "description": "ACP transaction endpoint path."
+        },
+        "purchasable": {
+          "type": "boolean",
+          "description": "Whether this service can be purchased via ACP."
+        },
+        "requires_quote": {
+          "type": "boolean",
+          "description": "Whether a quote/consultation is required before purchase."
+        }
+      },
+      "description": "Reference to ACP payment endpoint for this service."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Canonical URL of the service page (human-readable)."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of service listing creation."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of last service listing update."
+    }
+  },
+  "additionalProperties": false
+}

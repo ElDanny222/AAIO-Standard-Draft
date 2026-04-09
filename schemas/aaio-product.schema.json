@@ -1,0 +1,370 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tekoalydani.com/schemas/aaio-product/v0.1",
+  "title": "AAIO Product Schema",
+  "description": "Agent-optimal product data schema for Agentic AI Optimization (AAIO). Defines the canonical representation of a product that autonomous AI agents can reliably parse, compare, and use for purchasing decisions.",
+  "type": "object",
+  "required": [
+    "aaio_schema",
+    "id",
+    "name",
+    "description",
+    "category",
+    "pricing",
+    "availability"
+  ],
+  "properties": {
+    "aaio_schema": {
+      "type": "string",
+      "const": "aaio-product/v0.1",
+      "description": "Schema identifier and version."
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "description": "Merchant-unique stable product identifier. MUST NOT change across catalog updates."
+    },
+    "gtin": {
+      "type": "string",
+      "pattern": "^[0-9]{8,14}$",
+      "description": "Global Trade Item Number (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or GTIN-14)."
+    },
+    "sku": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Merchant-specific Stock Keeping Unit."
+    },
+    "mpn": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Manufacturer Part Number."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Human and agent-readable product name. Plain text, no HTML."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 5000,
+      "description": "Plain-text product description. No HTML or markdown. Optimized for AI agent comprehension: lead with key differentiators, specifications, and use cases."
+    },
+    "category": {
+      "type": "object",
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "string",
+          "description": "Hierarchical category path using forward-slash separators (e.g., 'electronics/widgets/professional')."
+        },
+        "google_product_category": {
+          "type": "integer",
+          "description": "Google Product Category ID (taxonomy v2024)."
+        },
+        "custom_labels": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "maxItems": 20,
+          "description": "Custom classification labels for agent filtering."
+        }
+      }
+    },
+    "brand": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Brand name."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Brand website URL."
+        }
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "required": ["currency", "amount"],
+      "properties": {
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "description": "ISO 4217 currency code."
+        },
+        "amount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Price in smallest currency unit (e.g., cents). Integer to avoid floating-point issues."
+        },
+        "amount_decimal": {
+          "type": "string",
+          "pattern": "^[0-9]+(\\.[0-9]{1,4})?$",
+          "description": "Human-readable decimal price string (e.g., '49.99')."
+        },
+        "tax_included": {
+          "type": "boolean",
+          "description": "Whether the amount includes applicable taxes."
+        },
+        "tax_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Applicable tax rate as decimal (e.g., 0.24 for 24% VAT)."
+        },
+        "compare_at_amount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Original price before discount (smallest currency unit). Enables agents to calculate savings."
+        },
+        "bulk_pricing": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["min_quantity", "amount"],
+            "properties": {
+              "min_quantity": {
+                "type": "integer",
+                "minimum": 2,
+                "description": "Minimum order quantity for this price tier."
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Unit price at this tier (smallest currency unit)."
+              }
+            }
+          },
+          "description": "Volume/bulk pricing tiers."
+        }
+      }
+    },
+    "availability": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["in_stock", "limited_stock", "preorder", "backorder", "out_of_stock", "discontinued"],
+          "description": "Current availability status."
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current stock quantity. SHOULD be provided when status is 'in_stock' or 'limited_stock'."
+        },
+        "lead_time_days": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Estimated days from order to shipment."
+        },
+        "backorder_allowed": {
+          "type": "boolean",
+          "description": "Whether orders are accepted when out of stock."
+        },
+        "preorder_release_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Expected availability date for preorder items (ISO 8601 date)."
+        }
+      }
+    },
+    "attributes": {
+      "type": "object",
+      "description": "Product-specific attributes. Keys SHOULD use snake_case. Values SHOULD include units in the key name (e.g., 'weight_g', 'length_mm').",
+      "additionalProperties": true,
+      "properties": {
+        "weight_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Product weight in grams."
+        },
+        "dimensions_mm": {
+          "type": "object",
+          "properties": {
+            "length": { "type": "number", "minimum": 0 },
+            "width": { "type": "number", "minimum": 0 },
+            "height": { "type": "number", "minimum": 0 }
+          },
+          "description": "Product dimensions in millimeters."
+        },
+        "color": {
+          "type": "string",
+          "description": "Product color. Use snake_case for standardized color names."
+        },
+        "material": {
+          "type": "string",
+          "description": "Primary material."
+        },
+        "condition": {
+          "type": "string",
+          "enum": ["new", "refurbished", "used"],
+          "description": "Product condition."
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Variant identifier."
+          },
+          "name": {
+            "type": "string",
+            "description": "Variant display name."
+          },
+          "sku": {
+            "type": "string",
+            "description": "Variant-specific SKU."
+          },
+          "attributes": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Attributes that differ from the parent product."
+          },
+          "pricing": {
+            "$ref": "#/properties/pricing",
+            "description": "Variant-specific pricing (overrides parent)."
+          },
+          "availability": {
+            "$ref": "#/properties/availability",
+            "description": "Variant-specific availability (overrides parent)."
+          }
+        }
+      },
+      "description": "Product variants (size, color, configuration)."
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url"],
+        "properties": {
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Image URL."
+          },
+          "alt_text": {
+            "type": "string",
+            "description": "Descriptive alt text."
+          },
+          "role": {
+            "type": "string",
+            "enum": ["primary", "gallery", "thumbnail", "technical"],
+            "description": "Image role."
+          }
+        }
+      },
+      "description": "Product images."
+    },
+    "shipping": {
+      "type": "object",
+      "properties": {
+        "weight_g": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Shipping weight in grams (may differ from product weight due to packaging)."
+        },
+        "dimensions_mm": {
+          "type": "object",
+          "properties": {
+            "length": { "type": "number", "minimum": 0 },
+            "width": { "type": "number", "minimum": 0 },
+            "height": { "type": "number", "minimum": 0 }
+          },
+          "description": "Package dimensions in millimeters."
+        },
+        "free_shipping": {
+          "type": "boolean",
+          "description": "Whether free shipping is available."
+        },
+        "shipping_regions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z]{2}$"
+          },
+          "description": "ISO 3166-1 alpha-2 country codes where shipping is available."
+        }
+      },
+      "description": "Shipping-specific information."
+    },
+    "agent_metadata": {
+      "type": "object",
+      "properties": {
+        "comparison_attributes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Attribute keys most useful for cross-product comparison."
+        },
+        "decision_factors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Dot-notation paths to fields most relevant for purchase decisions."
+        },
+        "alternatives": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Product IDs of recommended alternatives (same merchant)."
+        },
+        "complementary": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Product IDs of complementary products (frequently bought together)."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Machine-readable tags for agent filtering and categorization."
+        }
+      },
+      "description": "Agent-optimization metadata. Helps autonomous agents make better decisions without parsing the full product data."
+    },
+    "acp_reference": {
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "type": "string",
+          "description": "ACP transaction endpoint path."
+        },
+        "purchasable": {
+          "type": "boolean",
+          "description": "Whether this product can be purchased via ACP."
+        },
+        "requires_quote": {
+          "type": "boolean",
+          "description": "Whether a quote is required before purchase."
+        }
+      },
+      "description": "Reference to ACP payment endpoint for this product."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Canonical URL of the product page (human-readable)."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of product creation."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of last product update."
+    }
+  },
+  "additionalProperties": false
+}
