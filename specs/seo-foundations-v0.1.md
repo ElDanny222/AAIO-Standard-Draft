@@ -124,7 +124,7 @@ Content must be indexable — search engines and AI systems must be able to stor
 | Canonical URLs | MUST | `rel="canonical"` on every page |
 | Meta robots | MUST | Correct `index`/`noindex` directives |
 | Hreflang | SHOULD | For multilingual sites |
-| Pagination | MUST | `rel="next"` / `rel="prev"` for paginated content |
+| Pagination | SHOULD | `rel="next"` / `rel="prev"` for paginated content (Google dropped support 2019; Bing still supports; useful for agent navigation) |
 | Duplicate content elimination | MUST | One canonical URL per content entity |
 | Mobile-first content | MUST | Same content served to mobile and desktop |
 

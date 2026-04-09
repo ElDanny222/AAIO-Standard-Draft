@@ -33,10 +33,10 @@ MCP defines how AI models (LLMs) discover and call external tools. A business th
 
 | Attribute | Detail |
 |-----------|--------|
-| **Origin** | Emerging open standard |
+| **Origin** | Stripe & OpenAI (open standard, Apache 2.0) |
 | **Purpose** | Defines HTTP headers and signatures for machine-to-machine transactions |
 | **Layer** | Payment / transaction authorization |
-| **Status** | Draft |
+| **Status** | Active |
 
 ACP specifies how AI agents authenticate, authorize, and execute financial transactions without human approval at every step. It covers agent identity headers, transaction signing, and settlement hooks.
 
@@ -63,7 +63,7 @@ UCP defines what fields a product or service listing must include to be fully ma
 
 | Attribute | Detail |
 |-----------|--------|
-| **Origin** | Google (open standard) |
+| **Origin** | Google (now Linux Foundation, open standard) |
 | **Purpose** | Communication and negotiation protocol between autonomous agents |
 | **Layer** | Agent coordination / multi-agent orchestration |
 | **Status** | Active |
@@ -151,7 +151,7 @@ Tämä dokumentti kuvaa AI-agenttien protokollaekosysteemin:
 - **MCP** — AI-mallien yhteys ulkoisiin työkaluihin ja datalähteisiin (Anthropic)
 - **ACP** — Koneiden välisten maksujen ja transaktioiden otsakkeet
 - **UCP** — Yhtenäinen palvelu- ja tuotedatastandardi AI-agenteille
-- **A2A** — Agenttien välinen neuvottelu- ja koordinaatioprotokolla (Google)
+- **A2A** — Agenttien välinen neuvottelu- ja koordinaatioprotokolla (Google, nyt Linux Foundation)
 - **AGENTS.md** — Tiedosto, joka kertoo AI-agenteille miten sivusto/repo toimii
 
 **AAIO** ei ole uusi protokolla — se on optimointikehys, joka määrittelee miten organisaatiot implementoivat nämä protokollat oikeassa järjestyksessä ja oikealla syvyydellä.

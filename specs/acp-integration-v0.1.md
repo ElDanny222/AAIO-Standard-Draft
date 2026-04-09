@@ -16,8 +16,9 @@ HTTP headers, authentication flows, and transaction lifecycle management — tha
 allow AI purchasing agents to discover, negotiate, and complete payments on
 behalf of human principals.
 
-This specification does not define a new protocol. It profiles the existing
-Stripe ACP framework within the AAIO optimization layer, prescribing how
+This specification does not define a new protocol. It profiles the
+ACP framework (developed by Stripe & OpenAI, open standard under Apache 2.0)
+within the AAIO optimization layer, prescribing how
 e-commerce and service platforms expose ACP endpoints so that autonomous agents
 can transact reliably and securely.
 
@@ -50,7 +51,7 @@ interpreted as described in [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
 | Term | Definition |
 |------|------------|
-| **ACP** | Agent Commerce Protocol — Stripe's framework for machine-to-machine payment transactions. |
+| **ACP** | Agent Commerce Protocol — open standard by Stripe & OpenAI (Apache 2.0) for machine-to-machine payment transactions. |
 | **AAIO** | Agentic AI Optimization — the optimization layer ensuring websites are discoverable, understandable, and transactable by autonomous AI agents. |
 | **Purchasing Agent** | An AI agent acting on behalf of a human principal to discover, evaluate, and purchase goods or services. |
 | **Merchant Agent** | An AI agent or ACP-compliant endpoint representing a seller, capable of processing agent-initiated transactions. |
@@ -309,9 +310,9 @@ AAIO-compliant merchants MUST advertise ACP support in their AAIO manifest
       "endpoint": "/acp/v0.1/transactions",
       "authentication": ["oauth2_client_credentials", "api_key"],
       "supported_intents": ["quote", "purchase", "hold", "cancel"],
-      "supported_currencies": ["eur", "usd", "gbp"],
+      "supported_currencies": ["EUR", "USD", "GBP"],
       "max_transaction_amount": {
-        "eur": 100000
+        "EUR": 100000
       }
     }
   }

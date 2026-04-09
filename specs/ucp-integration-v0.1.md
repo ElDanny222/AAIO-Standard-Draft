@@ -373,7 +373,7 @@ AAIO-compliant merchants MUST advertise UCP support in their AAIO manifest
       "search_endpoint": "/ucp/v0.1/search",
       "total_products": 1523,
       "total_services": 12,
-      "supported_currencies": ["eur", "usd"],
+      "supported_currencies": ["EUR", "USD"],
       "default_locale": "fi-FI",
       "update_frequency": "hourly"
     }

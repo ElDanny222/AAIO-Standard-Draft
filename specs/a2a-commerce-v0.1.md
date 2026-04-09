@@ -191,7 +191,7 @@ at least one commerce-related skill:
       "role": "seller",
       "supported_protocols": ["acp", "ucp"],
       "categories": ["electronics/widgets", "electronics/accessories"],
-      "currencies": ["eur", "usd"],
+      "currencies": ["EUR", "USD"],
       "regions": ["FI", "SE", "NO", "DK", "EE", "DE"],
       "ucp_endpoint": "/ucp/v0.1/products",
       "acp_endpoint": "/acp/v0.1/transactions"

@@ -83,7 +83,7 @@ This glossary defines key terms used in the AAIO Standard and its supporting doc
 
 **FI:** Protokolla, joka mahdollistaa suoran viestinnän tekoälyagenttien välillä (esim. ostajagentti ↔ myyjäagentti). Tukee tehtäväpohjaisia vuorovaikutusmalleja, kuten neuvottelu, delegointi ja tilanseuranta. Googlen kehittämä.
 
-**Reference:** [github.com/google/A2A](https://github.com/google/A2A)
+**Reference:** [github.com/google/A2A](https://github.com/a2aproject/A2A)
 
 ---
 
@@ -163,7 +163,7 @@ This glossary defines key terms used in the AAIO Standard and its supporting doc
 
 ### A2A Agent Card
 
-**EN:** A JSON file served at `/.well-known/agent.json` that declares an A2A-compatible agent's capabilities, supported skills, and interaction endpoints. Part of the Google A2A protocol.
+**EN:** A JSON file served at `/.well-known/agent.json` that declares an A2A-compatible agent's capabilities, supported skills, and interaction endpoints. Part of the A2A protocol (Google, now Linux Foundation).
 
 **FI:** JSON-tiedosto, joka tarjoillaan osoitteessa `/.well-known/agent.json` ja joka ilmoittaa A2A-yhteensopivan agentin kyvykkyydet, tuetut taidot ja vuorovaikutuspäätepisteet. Osa Googlen A2A-protokollaa.
 

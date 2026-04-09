@@ -121,9 +121,9 @@ The [Terminology glossary](docs/terminology.md) defines all terms precisely. The
 | **AAIO** | Agentic AI Optimization | Enabling autonomous agents to discover, understand, and transact |
 | **AXO** | Agent Experience Optimization | UX/CX perspective on AAIO — how agents experience a site |
 | **MCP** | Model Context Protocol | Anthropic's protocol for connecting AI models to tools and data |
-| **ACP** | Agent Commerce Protocol | Machine-to-machine payment and transaction headers |
+| **ACP** | Agent Commerce Protocol | Machine-to-machine payment transactions (Stripe & OpenAI, Apache 2.0) |
 | **UCP** | Universal Commerce Protocol | Unified service data standard for AI agents |
-| **A2A** | Agent-to-Agent | Negotiation protocols between buyer and seller agents |
+| **A2A** | Agent-to-Agent | Agent negotiation protocol (Google, now Linux Foundation) |
 
 ---
 

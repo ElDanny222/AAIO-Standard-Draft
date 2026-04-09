@@ -88,10 +88,10 @@ Discovery is the ability of AI agents to find and identify a website as relevant
 |-------------|----------|-------------|
 | `robots.txt` agent directives | MUST | Explicit allow/disallow rules for AI agent user-agents |
 | `llms.txt` | SHOULD | LLM-readable site summary at `/llms.txt` (see [llms.txt specification](https://llmstxt.org/)) |
-| `ai.txt` | SHOULD | AI policy declaration at `/ai.txt` |
-| `.well-known/ai-plugin.json` | MAY | OpenAI plugin manifest or equivalent |
+| `ai.txt` | SHOULD | AI policy declaration at `/ai.txt` (note: emerging standard, no formal spec yet) |
+| `AGENTS.md` | SHOULD | Agent instruction file at repository or site root (see [AGENTS.md standard](https://github.com/anthropics/agents-md)) |
 | AAIO Agent Manifest | SHOULD | Machine-readable capability declaration (see Section 5) |
-| Structured sitemap | MUST | XML sitemap with `<lastmod>` and `<changefreq>` |
+| Structured sitemap | MUST | XML sitemap with `<lastmod>` (note: `<changefreq>` and `<priority>` are ignored by Google) |
 | Schema.org `WebSite` | MUST | JSON-LD `WebSite` markup with `potentialAction` for search |
 
 #### 2.2.2 Agent User-Agent Strings
@@ -181,7 +181,7 @@ Navigability defines how well AI agents can traverse a website to find specific 
 | XML sitemap | MUST | Complete, up-to-date sitemap at `/sitemap.xml` |
 | Breadcrumb markup | SHOULD | `BreadcrumbList` Schema.org markup on all pages |
 | Internal search API | SHOULD | Programmatic search endpoint (JSON responses) |
-| Pagination with `rel` links | MUST | `rel="next"` / `rel="prev"` for paginated content |
+| Pagination with `rel` links | SHOULD | `rel="next"` / `rel="prev"` for paginated content (note: Google dropped support in 2019, but useful for agent navigation; Bing still supports) |
 | Category taxonomy | SHOULD | Machine-readable category hierarchy |
 | HTTP status codes | MUST | Correct 200/301/404/410 responses (no soft 404s) |
 
@@ -214,6 +214,8 @@ Transactability is the ability of AI agents to complete commercial actions (purc
 
 #### 2.5.2 Transaction Maturity Levels
 
+> **Note:** These transaction levels (L0–L3) measure *transactability* only. They are distinct from the broader AIO Maturity Model (L0–L4), which measures overall AI optimization readiness across all four pillars. See the [AIO Framework](aio-framework-v0.1.md) for the organization-wide maturity model.
+
 | Level | Name | Description |
 |-------|------|-------------|
 | L0 | **Information Only** | Agent can read product data but cannot transact |
@@ -223,7 +225,7 @@ Transactability is the ability of AI agents to complete commercial actions (purc
 
 #### 2.5.3 A2A Commerce Integration
 
-For Level 3 transactability, sites SHOULD implement the [A2A protocol](https://github.com/google/A2A) to enable:
+For Level 3 transactability, sites SHOULD implement the [A2A protocol](https://github.com/a2aproject/A2A) to enable:
 
 - **Agent-to-agent negotiation**: Buyer agent ↔ Seller agent price/terms negotiation
 - **Structured task delegation**: Complex multi-step transactions as A2A tasks
@@ -367,7 +369,7 @@ AAIO operates as an optimization layer on top of existing protocols:
 - A2A Agent Cards SHOULD be published at `/.well-known/agent.json`
 - Task-based interaction patterns SHOULD follow the A2A task lifecycle
 
-**Reference:** [Google A2A Protocol](https://github.com/google/A2A)
+**Reference:** [A2A Protocol (Google, now Linux Foundation)](https://github.com/a2aproject/A2A)
 
 ---
 
@@ -559,7 +561,7 @@ Conformance can be validated using:
 - [Schema.org](https://schema.org/) — Structured data vocabulary
 - [OpenAPI Specification](https://spec.openapis.org/oas/latest.html) — API documentation standard
 - [Model Context Protocol](https://modelcontextprotocol.io/) — AI model context sharing
-- [Google A2A Protocol](https://github.com/google/A2A) — Agent-to-agent communication
+- [A2A Protocol (Google, now Linux Foundation)](https://github.com/a2aproject/A2A) — Agent-to-agent communication
 - [llms.txt Specification](https://llmstxt.org/) — LLM-readable site summaries
 - [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110) — HTTP Semantics
 - [GDPR](https://gdpr-info.eu/) — EU General Data Protection Regulation
