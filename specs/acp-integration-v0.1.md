@@ -110,7 +110,7 @@ All ACP transaction requests MUST include the following HTTP headers:
 | `ACP-Intent` | Enum | REQUIRED | Transaction intent: `purchase`, `quote`, `hold`, `cancel`. |
 | `ACP-Delegation-Token` | String | REQUIRED | Cryptographic proof of delegation from Principal to Agent. |
 | `ACP-Callback-Url` | URL | OPTIONAL | Webhook URL for asynchronous transaction status updates. |
-| `ACP-Max-Amount` | Object | OPTIONAL | Maximum authorized amount (`{"amount": 5000, "currency": "eur"}`). |
+| `ACP-Max-Amount` | Object | OPTIONAL | Maximum authorized amount (`{"amount": 5000, "currency": "EUR"}`). |
 | `ACP-Metadata` | JSON | OPTIONAL | Arbitrary key-value metadata for the transaction. |
 
 ### 3.2 Response Headers
@@ -210,7 +210,7 @@ ACP-Principal-Id: user-12345
 ACP-Transaction-Id: 550e8400-e29b-41d4-a716-446655440001
 ACP-Intent: purchase
 ACP-Delegation-Token: eyJhbGciOi...
-ACP-Max-Amount: {"amount": 10000, "currency": "eur"}
+ACP-Max-Amount: {"amount": 10000, "currency": "EUR"}
 Content-Type: application/json
 
 {
@@ -265,7 +265,7 @@ The `ACP-Delegation-Token` MUST be a signed JWT containing:
   "scope": "purchase",
   "max_amount": {
     "amount": 50000,
-    "currency": "eur"
+    "currency": "EUR"
   },
   "categories": ["electronics", "software"],
   "exp": 1735689600,
@@ -302,7 +302,7 @@ AAIO-compliant merchants MUST advertise ACP support in their AAIO manifest
 
 ```json
 {
-  "aaio_version": "0.1",
+  "aaioVersion": "0.1",
   "protocols": {
     "acp": {
       "version": "0.1",
@@ -363,7 +363,7 @@ include ACP capabilities:
     "details": {
       "requested_amount": 15000,
       "max_authorized": 10000,
-      "currency": "eur"
+      "currency": "EUR"
     }
   }
 }

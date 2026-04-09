@@ -118,7 +118,7 @@ product representation includes:
     "url": "https://widgetcorp.example.com"
   },
   "pricing": {
-    "currency": "eur",
+    "currency": "EUR",
     "amount": 4999,
     "amount_decimal": "49.99",
     "tax_included": true,
@@ -167,7 +167,7 @@ Services MUST conform to the `aaio-service.schema.json` schema:
   },
   "pricing": {
     "model": "fixed",
-    "currency": "eur",
+    "currency": "EUR",
     "amount": 299900,
     "amount_decimal": "2999.00",
     "billing_period": null,
@@ -363,7 +363,7 @@ AAIO-compliant merchants MUST advertise UCP support in their AAIO manifest
 
 ```json
 {
-  "aaio_version": "0.1",
+  "aaioVersion": "0.1",
   "protocols": {
     "ucp": {
       "version": "0.1",

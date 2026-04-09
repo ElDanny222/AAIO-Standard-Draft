@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://tekoalydani.com/schemas/aaio-product/v0.1",
+  "$id": "https://aaio-standard.org/schemas/aaio-product/v0.1",
   "title": "AAIO Product Schema",
   "description": "Agent-optimal product data schema for Agentic AI Optimization (AAIO). Defines the canonical representation of a product that autonomous AI agents can reliably parse, compare, and use for purchasing decisions.",
   "type": "object",

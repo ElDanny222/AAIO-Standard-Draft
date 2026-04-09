@@ -147,9 +147,9 @@ Start with the [AAIO Audit](#getting-an-aaio-audit) to understand your current b
 1. **Implement ACP headers on your transaction API**
 
    Follow the [ACP Integration Guide](../specs/acp-integration-v0.1.md). Key requirements:
-   - Agent identity header (`X-Agent-Id`)
-   - Transaction authorization header (`X-Agent-Auth`)
-   - Idempotency key support
+   - Agent identity header (`ACP-Agent-Id`)
+   - Delegation token header (`ACP-Delegation-Token`)
+   - Idempotency key support (`ACP-Transaction-Id`)
    - Machine-readable error responses
 
 2. **Create an agent-accessible checkout flow**

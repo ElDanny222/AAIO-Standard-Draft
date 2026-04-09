@@ -150,7 +150,7 @@ Tämä dokumentti kuvaa AI-agenttien protokollaekosysteemin:
 
 - **MCP** — AI-mallien yhteys ulkoisiin työkaluihin ja datalähteisiin (Anthropic)
 - **ACP** — Koneiden välisten maksujen ja transaktioiden otsakkeet
-- **UCP** — Yhtenäinen palvelu- ja tuotadatastandardi AI-agenteille
+- **UCP** — Yhtenäinen palvelu- ja tuotedatastandardi AI-agenteille
 - **A2A** — Agenttien välinen neuvottelu- ja koordinaatioprotokolla (Google)
 - **AGENTS.md** — Tiedosto, joka kertoo AI-agenteille miten sivusto/repo toimii
 

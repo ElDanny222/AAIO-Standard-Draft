@@ -35,12 +35,15 @@ AAIO-Standard-Draft/
 ├── LICENSE                          # Apache 2.0
 │
 ├── specs/                           # Technical specifications
-│   ├── aaio-core-v0.1.md            # AAIO Core Specification
+│   ├── aio-framework-v0.1.md        # AIO Umbrella Framework
+│   ├── seo-foundations-v0.1.md      # SEO Foundations for AAIO
 │   ├── aeo-guidelines-v0.1.md       # AEO Best Practices
+│   ├── geo-guidelines-v0.1.md       # GEO Guidelines
+│   ├── aaio-core-v0.1.md            # AAIO Core Specification
+│   ├── axo-framework-v0.1.md        # AXO Framework (UX perspective)
 │   ├── acp-integration-v0.1.md      # ACP Integration Guide
 │   ├── ucp-integration-v0.1.md      # UCP Integration Guide
-│   ├── a2a-commerce-v0.1.md         # A2A Commerce Protocol Profile
-│   └── axo-framework-v0.1.md        # AXO Framework (UX perspective)
+│   └── a2a-commerce-v0.1.md         # A2A Commerce Protocol Profile
 │
 ├── schemas/                         # Machine-readable schema definitions
 │   ├── aaio-manifest.schema.json    # Site-level AAIO manifest
@@ -63,26 +66,44 @@ AAIO-Standard-Draft/
 
 ## Specifications
 
+### AIO Stack (Cumulative Layers)
+
+| Layer | Document | Status | Description |
+|-------|----------|--------|-------------|
+| Framework | [AIO Framework v0.1](specs/aio-framework-v0.1.md) | Draft | Umbrella framework unifying all AI optimization layers |
+| L1 | [SEO Foundations v0.1](specs/seo-foundations-v0.1.md) | Draft | SEO requirements that underpin all AI optimization |
+| L2 | [AEO Guidelines v0.1](specs/aeo-guidelines-v0.1.md) | Draft | Answer Engine Optimization best practices |
+| L3 | [GEO Guidelines v0.1](specs/geo-guidelines-v0.1.md) | Draft | Generative Engine Optimization guidelines |
+| L4 | [AAIO Core v0.1](specs/aaio-core-v0.1.md) | Draft | Core optimization requirements and agent-readiness criteria |
+| L4 (UX) | [AXO Framework v0.1](specs/axo-framework-v0.1.md) | Draft | Agent Experience Optimization framework |
+
+### Protocol Integration Specs
+
 | Document | Status | Description |
 |----------|--------|-------------|
-| [AAIO Core v0.1](specs/aaio-core-v0.1.md) | Draft | Core optimization requirements and agent-readiness criteria |
-| [AEO Guidelines v0.1](specs/aeo-guidelines-v0.1.md) | Draft | Answer Engine Optimization best practices |
 | [ACP Integration v0.1](specs/acp-integration-v0.1.md) | Draft | Agent Commerce Protocol integration guide |
 | [UCP Integration v0.1](specs/ucp-integration-v0.1.md) | Draft | Universal Commerce Protocol integration guide |
 | [A2A Commerce v0.1](specs/a2a-commerce-v0.1.md) | Draft | Agent-to-Agent negotiation protocol profile |
-| [AXO Framework v0.1](specs/axo-framework-v0.1.md) | Draft | Agent Experience Optimization framework |
 
 ---
 
 ## Quick Start
 
+**Are you an executive or strategist?**
+
+Start with the [AIO Framework](specs/aio-framework-v0.1.md) for the big picture — it explains the cumulative layer model and maturity path from SEO to full AAIO.
+
 **Are you an organization that wants to become agent-ready?**
 
-Start with the [Implementation Roadmap](docs/implementation-roadmap.md). It walks through a practical, phase-by-phase path from zero to full AAIO compliance.
+Start with the [SEO Foundations](specs/seo-foundations-v0.1.md) checklist, then follow the [Implementation Roadmap](docs/implementation-roadmap.md) for a phase-by-phase path to full AAIO compliance.
 
 **Are you a developer building agent-facing infrastructure?**
 
 Read the [AAIO Core Specification](specs/aaio-core-v0.1.md) and the [Protocol Landscape](docs/protocol-landscape.md) first.
+
+**Are you a content strategist or marketer?**
+
+The [AEO Guidelines](specs/aeo-guidelines-v0.1.md) and [GEO Guidelines](specs/geo-guidelines-v0.1.md) cover how to optimize content for AI answer engines and generative AI inclusion.
 
 **Are you an AI researcher or journalist?**
 

@@ -228,7 +228,7 @@ A buyer agent's AgentCard advertises purchasing capabilities:
       "version": "0.1",
       "role": "buyer",
       "max_budget": {
-        "currency": "eur",
+        "currency": "EUR",
         "amount": 1000000
       },
       "preferred_payment": "acp"
@@ -325,11 +325,11 @@ determines the commerce action:
             "quantity": 100,
             "unit_price": {
               "amount": 3999,
-              "currency": "eur"
+              "currency": "EUR"
             },
             "total_price": {
               "amount": 399900,
-              "currency": "eur"
+              "currency": "EUR"
             },
             "availability": "in_stock",
             "lead_time_days": 3
@@ -337,11 +337,11 @@ determines the commerce action:
         ],
         "shipping_cost": {
           "amount": 2500,
-          "currency": "eur"
+          "currency": "EUR"
         },
         "total": {
           "amount": 402400,
-          "currency": "eur"
+          "currency": "EUR"
         },
         "payment_terms": "net_30",
         "valid_until": "2026-04-16T23:59:59Z",
@@ -375,7 +375,7 @@ determines the commerce action:
             "quantity": 100,
             "agreed_unit_price": {
               "amount": 3999,
-              "currency": "eur"
+              "currency": "EUR"
             }
           }
         ],
@@ -475,15 +475,15 @@ Commerce artifacts are structured data objects attached to tasks:
       "product_id": "prod_widget_pro_2026",
       "name": "Widget Pro 2026",
       "quantity": 100,
-      "unit_price": {"amount": 3999, "currency": "eur"},
-      "total": {"amount": 399900, "currency": "eur"},
+      "unit_price": {"amount": 3999, "currency": "EUR"},
+      "total": {"amount": 399900, "currency": "EUR"},
       "aaio_schema_ref": "aaio-product/v0.1"
     }
   ],
-  "subtotal": {"amount": 399900, "currency": "eur"},
-  "shipping": {"amount": 2500, "currency": "eur"},
-  "tax": {"amount": 96576, "currency": "eur", "rate": 0.24},
-  "total": {"amount": 498976, "currency": "eur"},
+  "subtotal": {"amount": 399900, "currency": "EUR"},
+  "shipping": {"amount": 2500, "currency": "EUR"},
+  "tax": {"amount": 96576, "currency": "EUR", "rate": 0.24},
+  "total": {"amount": 498976, "currency": "EUR"},
   "payment_terms": "net_30",
   "valid_until": "2026-04-16T23:59:59Z",
   "created_at": "2026-04-09T12:00:00Z"
@@ -505,10 +505,10 @@ Commerce artifacts are structured data objects attached to tasks:
     {
       "product_id": "prod_widget_pro_2026",
       "quantity": 100,
-      "unit_price": {"amount": 3999, "currency": "eur"}
+      "unit_price": {"amount": 3999, "currency": "EUR"}
     }
   ],
-  "total": {"amount": 498976, "currency": "eur"},
+  "total": {"amount": 498976, "currency": "EUR"},
   "estimated_delivery": "2026-04-12",
   "shipping_method": "standard",
   "tracking_url": null,
@@ -539,7 +539,7 @@ When a buyer agent wants to negotiate terms:
     "items": [
       {
         "product_id": "prod_widget_pro_2026",
-        "requested_unit_price": {"amount": 3500, "currency": "eur"},
+        "requested_unit_price": {"amount": 3500, "currency": "EUR"},
         "justification": "Competitor quote at 3600 EUR/unit for equivalent product"
       }
     ],
@@ -583,7 +583,7 @@ Seller agents MUST be discoverable via:
 
 ```json
 {
-  "aaio_version": "0.1",
+  "aaioVersion": "0.1",
   "protocols": {
     "a2a": {
       "version": "1.0",
