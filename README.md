@@ -6,7 +6,7 @@
 
 **Agentic AI Optimization (AAIO)** — open technical specifications for making websites discoverable, readable, and transactable by autonomous AI agents.
 
-Maintained by **Dani Forsberg** / [RAD Intelligence](https://tekoalydani.com)
+Maintained by [Tekoäly-Dani](https://tekoalydani.com)
 
 ---
 
@@ -148,8 +148,7 @@ Protokollakartta: [docs/protocol-landscape.md](docs/protocol-landscape.md)
 
 ## Author
 
-**Dani Forsberg**  
-Head of AI Strategy — [RAD Intelligence](https://tekoalydani.com)  
+[Tekoäly-Dani](https://tekoalydani.com)  
 [dani@tekoalydani.com](mailto:dani@tekoalydani.com)
 
 ---

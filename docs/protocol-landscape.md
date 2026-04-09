@@ -1,6 +1,6 @@
 # Protocol Landscape
 
-> **Status:** Draft v0.1 | Maintained by [RAD Intelligence](https://tekoalydani.com)
+> **Status:** Draft v0.1 | Maintained by [Tekoäly-Dani](https://tekoalydani.com)
 
 This document maps the agent protocol ecosystem and explains how each protocol relates to AAIO (Agentic AI Optimization).
 

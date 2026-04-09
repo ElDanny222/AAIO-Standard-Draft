@@ -3,7 +3,7 @@
 **Status:** Draft  
 **Version:** 0.1.0  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani / RAD Intelligence  
+**Authors:** [Tekoäly-Dani](https://tekoalydani.com)  
 **License:** Apache 2.0  
 
 ---
@@ -541,7 +541,7 @@ Conformance can be validated using:
 
 1. The AAIO Readiness Score assessment (Section 3)
 2. Automated schema validation against the AAIO manifest schema
-3. The Tekoaly-Dani AAIO Audit service
+3. The Tekoäly-Dani AAIO Audit service
 
 ---
 
@@ -572,4 +572,4 @@ Conformance can be validated using:
 
 ---
 
-*This specification is maintained by [Tekoaly-Dani](https://tekoalydani.com) as part of the AAIO Standard Draft project.*
+*This specification is maintained by [Tekoäly-Dani](https://tekoalydani.com) as part of the AAIO Standard Draft project.*

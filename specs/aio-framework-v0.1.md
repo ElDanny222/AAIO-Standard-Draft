@@ -3,7 +3,7 @@
 **Status:** Draft  
 **Version:** 0.1.0  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani / RAD Intelligence  
+**Authors:** [Tekoäly-Dani](https://tekoalydani.com)  
 **License:** Apache 2.0  
 
 ---
@@ -421,4 +421,4 @@ Quick reference for each AIO layer's key attributes:
 
 ---
 
-*This document is part of the [AAIO Standard Draft](../README.md) project by [Tekoaly-Dani](https://tekoalydani.com).*
+*This document is part of the [AAIO Standard Draft](../README.md) project by [Tekoäly-Dani](https://tekoalydani.com).*

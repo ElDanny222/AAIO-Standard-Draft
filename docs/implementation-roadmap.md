@@ -1,6 +1,6 @@
 # AAIO Implementation Roadmap
 
-> **Status:** Draft v0.1 | Maintained by [RAD Intelligence](https://tekoalydani.com)
+> **Status:** Draft v0.1 | Maintained by [Tekoäly-Dani](https://tekoalydani.com)
 
 A practical, phase-by-phase guide for organizations implementing Agentic AI Optimization (AAIO).
 
@@ -225,7 +225,7 @@ Not sure where to start? An AAIO Audit gives you:
 - Estimated effort per phase
 
 **AAIO Audit — 990 EUR**  
-Delivered by RAD Intelligence in 5 business days.
+Delivered by [Tekoäly-Dani](https://tekoalydani.com) in 5 business days.
 
 Contact: [dani@tekoalydani.com](mailto:dani@tekoalydani.com) | [tekoalydani.com](https://tekoalydani.com)
 
@@ -255,6 +255,6 @@ Tämä dokumentti on käytännönläheinen käyttöönotto-opas AAIO:n implement
 3. **Luettavuus (taso 2)** — Koneluettava API tai MCP-palvelin — 1–4 viikkoa
 4. **Transaktiot (taso 3–4)** — Agenttimaksut ja A2A-integraatio — 2–20 viikkoa
 
-Aloitussuositus: **AAIO Audit (990 EUR)** — RAD Intelligence tekee analyysin nykytilastasi ja antaa priorisoidun toimenpidesuunnitelman. [tekoalydani.com](https://tekoalydani.com)
+Aloitussuositus: **AAIO Audit (990 EUR)** — [Tekoäly-Dani](https://tekoalydani.com) tekee analyysin nykytilastasi ja antaa priorisoidun toimenpidesuunnitelman. [tekoalydani.com](https://tekoalydani.com)
 
 Protokollakartta: [protocol-landscape.md](protocol-landscape.md)

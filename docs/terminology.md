@@ -3,7 +3,7 @@
 **Status:** Draft  
 **Version:** 0.1.0  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani / RAD Intelligence  
+**Authors:** [Tekoäly-Dani](https://tekoalydani.com)  
 
 Tämä sanasto määrittelee AAIO-standardissa ja sen tukidokumenteissa käytetyt keskeiset termit. Termit on esitetty sekä suomeksi että englanniksi.
 
@@ -217,4 +217,4 @@ This glossary defines key terms used in the AAIO Standard and its supporting doc
 
 ---
 
-*This glossary is part of the [AAIO Standard Draft](../README.md) project by [Tekoaly-Dani](https://tekoalydani.com).*
+*This glossary is part of the [AAIO Standard Draft](../README.md) project by [Tekoäly-Dani](https://tekoalydani.com).*

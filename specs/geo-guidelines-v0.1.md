@@ -3,7 +3,7 @@
 **Status:** Draft  
 **Version:** 0.1.0  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani / RAD Intelligence  
+**Authors:** [Tekoäly-Dani](https://tekoalydani.com)  
 **License:** Apache 2.0  
 **Parent Spec:** [AAIO Core Specification v0.1](aaio-core-v0.1.md)  
 
@@ -181,7 +181,7 @@ For content making verifiable claims:
   },
   "author": {
     "@type": "Organization",
-    "name": "Tekoaly-Dani"
+    "name": "Tekoäly-Dani"
   }
 }
 ```
@@ -198,7 +198,7 @@ For content with original data:
   "description": "AAIO Readiness Scores across 500 Finnish e-commerce sites",
   "creator": {
     "@type": "Organization",
-    "name": "Tekoaly-Dani"
+    "name": "Tekoäly-Dani"
   },
   "datePublished": "2026-04-01",
   "distribution": {
@@ -398,4 +398,4 @@ AAIO → "Agents can transact with you autonomously"
 
 ---
 
-*This document is part of the [AAIO Standard Draft](../README.md) project by [Tekoaly-Dani](https://tekoalydani.com).*
+*This document is part of the [AAIO Standard Draft](../README.md) project by [Tekoäly-Dani](https://tekoalydani.com).*

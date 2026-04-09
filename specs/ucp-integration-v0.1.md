@@ -3,7 +3,7 @@
 **Version:** 0.1-draft  
 **Status:** Draft  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani AAIO Working Group  
+**Authors:** Tekoäly-Dani AAIO Working Group  
 
 ---
 
@@ -162,7 +162,7 @@ Services MUST conform to the `aaio-service.schema.json` schema:
     "custom_labels": ["aaio", "audit", "ai-readiness"]
   },
   "provider": {
-    "name": "Tekoaly-Dani",
+    "name": "Tekoäly-Dani",
     "url": "https://tekoalydani.com"
   },
   "pricing": {
@@ -508,4 +508,4 @@ An implementation is conformant with this specification if it:
 
 ---
 
-*Copyright 2026 Tekoaly-Dani. Licensed under Apache 2.0.*
+*Copyright 2026 Tekoäly-Dani. Licensed under Apache 2.0.*

@@ -3,7 +3,7 @@
 **Status:** Draft  
 **Version:** 0.1.0  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani / RAD Intelligence  
+**Authors:** [Tekoäly-Dani](https://tekoalydani.com)  
 **License:** Apache 2.0  
 **Parent Spec:** [AAIO Core Specification v0.1](aaio-core-v0.1.md)  
 
@@ -108,7 +108,7 @@ These Schema.org types directly support AEO by making content machine-parseable:
   "headline": "AAIO Core Specification v0.1",
   "author": {
     "@type": "Organization",
-    "name": "Tekoaly-Dani"
+    "name": "Tekoäly-Dani"
   },
   "datePublished": "2026-04-09",
   "dateModified": "2026-04-09",
@@ -145,7 +145,7 @@ These Schema.org types directly support AEO by making content machine-parseable:
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Tekoaly-Dani",
+  "name": "Tekoäly-Dani",
   "description": "Finnish AI optimization consultancy specializing in AAIO",
   "knowsAbout": ["AAIO", "AEO", "GEO", "AI Optimization", "Agent Commerce"],
   "founder": {
@@ -303,4 +303,4 @@ LLMs consider freshness when selecting sources:
 
 ---
 
-*This document is part of the [AAIO Standard Draft](../README.md) project by [Tekoaly-Dani](https://tekoalydani.com).*
+*This document is part of the [AAIO Standard Draft](../README.md) project by [Tekoäly-Dani](https://tekoalydani.com).*

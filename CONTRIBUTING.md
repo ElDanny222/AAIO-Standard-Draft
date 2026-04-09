@@ -68,7 +68,7 @@ Open an issue with the label `implementation-feedback` or email [dani@tekoalydan
 
 5. **Review**
 
-   All PRs are reviewed by the repository maintainer (Dani Forsberg). The review process checks for:
+   All PRs are reviewed by the repository maintainer ([Tekoäly-Dani](https://tekoalydani.com)). The review process checks for:
    - Technical accuracy
    - Consistency with the overall AAIO framework
    - Clarity and readability
@@ -89,7 +89,7 @@ All specification documents follow this structure:
 ```
 # Document Title
 
-> **Status:** Draft v0.X | Maintained by RAD Intelligence (https://tekoalydani.com)
+> **Status:** Draft v0.X | Maintained by [Tekoäly-Dani](https://tekoalydani.com)
 
 [One-sentence description of what this document covers]
 
@@ -155,6 +155,5 @@ This is a technical specification project. Contributions are evaluated on techni
 
 ## Contact
 
-**Dani Forsberg**
+[Tekoäly-Dani](https://tekoalydani.com)  
 [dani@tekoalydani.com](mailto:dani@tekoalydani.com)
-[tekoalydani.com](https://tekoalydani.com)

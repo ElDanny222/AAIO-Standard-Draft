@@ -3,7 +3,7 @@
 **Version:** 0.1-draft  
 **Status:** Draft  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani AAIO Working Group  
+**Authors:** Tekoäly-Dani AAIO Working Group  
 
 ---
 
@@ -459,4 +459,4 @@ An implementation is conformant with this specification if it:
 
 ---
 
-*Copyright 2026 Tekoaly-Dani. Licensed under Apache 2.0.*
+*Copyright 2026 Tekoäly-Dani. Licensed under Apache 2.0.*

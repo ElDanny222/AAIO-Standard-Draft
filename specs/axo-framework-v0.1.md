@@ -3,7 +3,7 @@
 **Status:** Draft  
 **Version:** 0.1.0  
 **Date:** 2026-04-09  
-**Authors:** Tekoaly-Dani / RAD Intelligence  
+**Authors:** [Tekoäly-Dani](https://tekoalydani.com)  
 **License:** Apache 2.0  
 **Parent Spec:** [AAIO Core Specification v0.1](aaio-core-v0.1.md)  
 
@@ -373,4 +373,4 @@ AXO is not a cost center competing with human UX — it is a multiplier that imp
 
 ---
 
-*This framework is part of the [AAIO Standard Draft](../README.md) project by [Tekoaly-Dani](https://tekoalydani.com).*
+*This framework is part of the [AAIO Standard Draft](../README.md) project by [Tekoäly-Dani](https://tekoalydani.com).*
