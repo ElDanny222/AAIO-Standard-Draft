@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aaio-standard.org/schemas/aaio-manifest.schema.json",
+  "title": "AAIO Agent Manifest",
+  "description": "Machine-readable manifest declaring a website's AAIO capabilities, supported protocols, and available endpoints for AI agents.",
+  "type": "object",
+  "required": ["version", "name", "url", "aaioVersion", "capabilities"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this JSON Schema"
+    },
+    "version": {
+      "type": "string",
+      "description": "Version of this manifest document",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the website or service"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the website or service"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Base URL of the website"
+    },
+    "contact": {
+      "type": "string",
+      "description": "Contact email for AI agent integration support"
+    },
+    "aaioVersion": {
+      "type": "string",
+      "description": "Version of the AAIO specification this manifest conforms to",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$"
+    },
+    "capabilities": {
+      "type": "object",
+      "description": "Declared AAIO capabilities organized by the four pillars",
+      "required": ["discovery", "readability"],
+      "properties": {
+        "discovery": {
+          "type": "object",
+          "description": "Discovery capabilities — how agents find and identify this site",
+          "properties": {
+            "robotsTxt": {
+              "type": "boolean",
+              "description": "Whether robots.txt includes AI agent directives"
+            },
+            "llmsTxt": {
+              "type": "boolean",
+              "description": "Whether llms.txt is available at site root"
+            },
+            "aiTxt": {
+              "type": "boolean",
+              "description": "Whether ai.txt is available at site root"
+            },
+            "sitemap": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the XML sitemap"
+            },
+            "agentManifest": {
+              "type": "boolean",
+              "description": "Whether this AAIO manifest is published (self-referential)"
+            }
+          }
+        },
+        "readability": {
+          "type": "object",
+          "description": "Machine-readability capabilities — structured data and data formats",
+          "properties": {
+            "schemaOrg": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "List of Schema.org types implemented (e.g., Product, Offer, Organization)"
+            },
+            "openApi": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the OpenAPI specification document"
+            },
+            "productFeed": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the machine-readable product/service feed"
+            },
+            "dataFormats": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["json-ld", "microdata", "rdfa", "json", "xml", "csv"]
+              },
+              "description": "Structured data formats supported"
+            }
+          }
+        },
+        "navigation": {
+          "type": "object",
+          "description": "Navigation capabilities — how agents traverse the site",
+          "properties": {
+            "searchEndpoint": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the site search API endpoint"
+            },
+            "categoryEndpoint": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the category listing API endpoint"
+            },
+            "breadcrumbs": {
+              "type": "boolean",
+              "description": "Whether BreadcrumbList Schema.org markup is implemented"
+            },
+            "pagination": {
+              "type": "boolean",
+              "description": "Whether pagination uses rel=next/prev"
+            }
+          }
+        },
+        "transaction": {
+          "type": "object",
+          "description": "Transaction capabilities — how agents can purchase or book",
+          "properties": {
+            "level": {
+              "type": "string",
+              "enum": ["L0", "L1", "L2", "L3"],
+              "description": "Transaction maturity level (L0=info only, L3=fully autonomous)"
+            },
+            "checkoutApi": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the checkout API endpoint"
+            },
+            "cartApi": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the cart management API endpoint"
+            },
+            "paymentProtocols": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Supported payment protocols (e.g., acp-v1, stripe, paypal)"
+            },
+            "authentication": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["oauth2", "api-key", "bearer-token", "none"]
+              },
+              "description": "Supported authentication methods for transactional operations"
+            },
+            "tosUrl": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the terms of service"
+            },
+            "returnPolicyUrl": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the return/refund policy"
+            }
+          }
+        }
+      }
+    },
+    "protocols": {
+      "type": "object",
+      "description": "Supported agent communication protocols",
+      "properties": {
+        "mcp": {
+          "type": "object",
+          "properties": {
+            "supported": { "type": "boolean" },
+            "serverUrl": { "type": "string", "format": "uri" }
+          }
+        },
+        "a2a": {
+          "type": "object",
+          "properties": {
+            "supported": { "type": "boolean" },
+            "agentCard": {
+              "type": "string",
+              "format": "uri",
+              "description": "URL of the A2A Agent Card (typically /.well-known/agent.json)"
+            }
+          }
+        },
+        "acp": {
+          "type": "object",
+          "properties": {
+            "supported": { "type": "boolean" },
+            "version": { "type": "string" }
+          }
+        },
+        "ucp": {
+          "type": "object",
+          "properties": {
+            "supported": { "type": "boolean" },
+            "version": { "type": "string" }
+          }
+        }
+      }
+    },
+    "rateLimit": {
+      "type": "object",
+      "description": "Rate limiting information for agent traffic",
+      "properties": {
+        "requestsPerMinute": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Maximum requests per minute for authenticated agents"
+        },
+        "burstLimit": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Maximum burst requests allowed"
+        }
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of when this manifest was last updated"
+    }
+  },
+  "additionalProperties": false
+}
