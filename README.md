@@ -141,8 +141,11 @@ Tämä repository sisältää avoimet tekniset spesifikaatiot **Agentic AI Optim
 
 **AAIO tarkoittaa:** Optimointikerros, joka määrittelee miten organisaatiot implementoivat agenttityökalut (MCP, ACP, UCP, A2A) niin, että autonomiset AI-agentit löytävät, ymmärtävät ja voivat asioida niiden kanssa ilman ihmisvälikättä.
 
-Käytännön käyttöönotto-opas: [docs/implementation-roadmap.md](docs/implementation-roadmap.md)  
-Protokollakartta: [docs/protocol-landscape.md](docs/protocol-landscape.md)
+**[Kaikki spesifikaatiot suomeksi: fi/README.md](fi/README.md)**
+
+Käytännön käyttöönotto-opas: [fi/docs/implementation-roadmap.md](fi/docs/implementation-roadmap.md)  
+Protokollakartta: [fi/docs/protocol-landscape.md](fi/docs/protocol-landscape.md)  
+Termistö: [fi/docs/terminology.md](fi/docs/terminology.md)
 
 ---
 
