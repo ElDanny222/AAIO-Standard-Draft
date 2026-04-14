@@ -1,0 +1,60 @@
+{
+  "$schema": "https://aaio-standard.org/schemas/aaio-manifest.schema.json",
+  "version": "1.0.0",
+  "name": "Your Company Name",
+  "description": "AI optimization consulting — helping businesses become agent-ready",
+  "url": "https://yourdomain.com",
+  "contact": "contact@yourdomain.com",
+  "aaioVersion": "0.1",
+  "capabilities": {
+    "discovery": {
+      "robotsTxt": true,
+      "llmsTxt": true,
+      "aiTxt": true,
+      "agentsMd": true,
+      "agentManifest": true,
+      "structuredSitemap": true,
+      "websiteSchema": true
+    },
+    "readability": {
+      "jsonLd": true,
+      "openApi": true,
+      "ucpServices": true,
+      "ucpProducts": false,
+      "mcpServer": false
+    },
+    "navigation": {
+      "xmlSitemap": true,
+      "internalLinks": true,
+      "breadcrumbs": true,
+      "searchEndpoint": false
+    },
+    "transactability": {
+      "checkoutApi": false,
+      "quoteApi": true,
+      "bookingApi": true,
+      "acpHeaders": false,
+      "a2aEndpoint": false
+    }
+  },
+  "endpoints": {
+    "serviceCatalog": "https://yourdomain.com/api/v1/services",
+    "quote": "https://yourdomain.com/api/v1/quote",
+    "booking": "https://yourdomain.com/api/v1/booking"
+  },
+  "protocols": {
+    "mcp": false,
+    "acp": false,
+    "ucp": true,
+    "a2a": false
+  },
+  "aaioScore": {
+    "readinessLevel": 2,
+    "discoveryScore": 90,
+    "readabilityScore": 70,
+    "navigationScore": 75,
+    "transactabilityScore": 30,
+    "overallScore": 66
+  },
+  "updatedAt": "2026-04-09T00:00:00Z"
+}
