@@ -1,0 +1,37 @@
+# [Your Company Name]
+
+> [One-sentence description of your business and core value proposition]
+
+## Services
+
+- **[Service 1 Name]**: [Brief description]. Starting from [price].
+- **[Service 2 Name]**: [Brief description]. Starting from [price].
+- **[Service 3 Name]**: [Brief description]. Starting from [price].
+
+## About
+
+Founded in [year], [Your Company Name] specializes in [specialization area]. Clients include [types of clients, not specific names]. Based in [location].
+
+## Contact
+
+- Website: https://yourdomain.com
+- Email: contact@yourdomain.com
+- Booking: https://yourdomain.com/book
+
+## Machine-readable data
+
+- Service catalog (JSON/UCP): https://yourdomain.com/api/v1/services
+- AAIO manifest: https://yourdomain.com/.well-known/aaio-manifest.json
+- Agent instructions: https://yourdomain.com/AGENTS.md
+
+## What I can help with
+
+[Plain language description of your expertise area — written so an LLM can accurately summarize your capabilities when asked by a user]
+
+## What I cannot help with
+
+[List of things explicitly outside your scope — helps agents give accurate referrals]
+
+## Pricing model
+
+[One paragraph on how pricing works. Be specific enough that an agent can tell a user if your services are in their budget range.]
