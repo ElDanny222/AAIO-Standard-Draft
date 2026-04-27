@@ -6,7 +6,9 @@
 
 **Agentic AI Optimization (AAIO)** — open technical specifications for making websites discoverable, readable, and transactable by autonomous AI agents.
 
-Maintained by [Tekoäly-Dani](https://tekoalydani.com)
+Drafted and maintained by [Tekoäly-Dani](https://tekoalydani.com) as a local implementation reference and standard draft for the Finnish market — published openly so other implementers can build on the same baseline.
+
+The framework's academic anchor is **Floridi et al., *Minds & Machines*, Springer Nature 2026** (DOI: [10.1007/s11023-026-09779-8](https://doi.org/10.1007/s11023-026-09779-8)) — a peer-reviewed article that defines the Agentic AI Optimization concept and its GELSI lens (Governance, Ethics, Legal, Social Implications). This repository is the practitioner-side draft that operationalizes that frame; the academic source is what enterprise procurement can ground decisions on.
 
 ---
 
@@ -131,15 +133,17 @@ The [Terminology glossary](docs/terminology.md) defines all terms precisely. The
 
 This repository is in **active draft** status. All specifications are v0.1 and subject to change. Feedback and contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-These specifications are developed based on real-world AAIO implementation work at [tekoalydani.com](https://tekoalydani.com) and are designed to be vendor-neutral and openly extensible.
+These specifications are developed based on real-world AAIO implementation work at [tekoalydani.com](https://tekoalydani.com) and are designed to be vendor-neutral and openly extensible. The conceptual frame is anchored in Floridi et al., *Minds & Machines*, Springer Nature 2026 (DOI: [10.1007/s11023-026-09779-8](https://doi.org/10.1007/s11023-026-09779-8)); the work in this repository is the local, practitioner-driven draft on top of that frame, not a separate or competing definition of AAIO.
 
 ---
 
 ## Suomeksi / In Finnish
 
-Tämä repository sisältää avoimet tekniset spesifikaatiot **Agentic AI Optimization (AAIO)** -standardille.
+Tämä repository sisältää avoimet tekniset spesifikaatiot **Agentic AI Optimization (AAIO)** -standardille — paikallisena toteutuksena ja standardiluonnoksena, jonka [Tekoäly-Dani](https://tekoalydani.com) on kirjoittanut Suomen markkinatarpeeseen ja julkaissut avoimena, jotta muut toteuttajat voivat käyttää samaa pohjaa.
 
 **AAIO tarkoittaa:** Optimointikerros, joka määrittelee miten organisaatiot implementoivat agenttityökalut (MCP, ACP, UCP, A2A) niin, että autonomiset AI-agentit löytävät, ymmärtävät ja voivat asioida niiden kanssa ilman ihmisvälikättä.
+
+**Akateeminen ankkuri:** Floridi et al., *Minds & Machines*, Springer Nature 2026 (DOI: [10.1007/s11023-026-09779-8](https://doi.org/10.1007/s11023-026-09779-8)) — vertaisarvioitu artikkeli, joka täsmentää AAIO-käsitteen ja sen GELSI-näkökulman (Governance, Ethics, Legal, Social Implications). Tämä repository on käytännön toteuttajan luonnos kyseisen kehyksen päälle, ei erillinen tai kilpaileva määritelmä AAIO:sta.
 
 **[Kaikki spesifikaatiot suomeksi: fi/README.md](fi/README.md)**
 
