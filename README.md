@@ -34,6 +34,7 @@ Human search (SEO) → AI answer engines (AEO/GEO) → Autonomous agents (AAIO)
 AAIO-Standard-Draft/
 ├── README.md                        # This file
 ├── CONTRIBUTING.md                  # How to contribute
+├── GOVERNANCE.md                    # Maintainer roles, decision process, release cadence
 ├── LICENSE                          # Apache 2.0
 │
 ├── specs/                           # Technical specifications
@@ -131,7 +132,7 @@ The [Terminology glossary](docs/terminology.md) defines all terms precisely. The
 
 ## Status
 
-This repository is in **active draft** status. All specifications are v0.1 and subject to change. Feedback and contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+This repository is in **active draft** status. All specifications are v0.1 and subject to change. Feedback and contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). Maintainer roles, decision process, and release cadence are documented in [GOVERNANCE.md](GOVERNANCE.md).
 
 These specifications are developed based on real-world AAIO implementation work at [tekoalydani.com](https://tekoalydani.com) and are designed to be vendor-neutral and openly extensible. The conceptual frame is anchored in Floridi et al., *Minds & Machines*, Springer Nature 2026 (DOI: [10.1007/s11023-026-09779-8](https://doi.org/10.1007/s11023-026-09779-8)); the work in this repository is the local, practitioner-driven draft on top of that frame, not a separate or competing definition of AAIO.
 
